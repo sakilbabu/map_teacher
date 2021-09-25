@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:map_teacher/continets.dart';
+
+import 'data_model.dart';
 
 class MyHomePage extends StatelessWidget {
-  List<String> images = [
-    "assets/images/book_store.jpeg",
-    "assets/images/map.jpeg",
-    "assets/images/movie.jpeg",
-    "assets/images/music.jpeg",
-    "assets/images/5.jpeg",
-    "assets/images/6.jpeg",
-    "assets/images/7.jpeg",
-    "assets/images/8.jpeg",
-    "assets/images/9.jpeg",
-    "assets/images/10.jpeg",
+  List<PageModel> homeScreen = [
+    PageModel(wallpapers: [], map: [], books: [], foods: [], movies: [])
   ];
-  List<String> continents = ["Asia", "America", "Europe"];
-
-  List<String> items = ['map', 'movies', 'shop'];
+  List<String> images = [
+    "assets/images/1.jpeg",
+    "assets/images/2.jpeg",
+    "assets/images/3.jpeg",
+    "assets/images/4.jpeg",
+    "assets/images/5.jpeg"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
                 PopupMenuButton(
-                    color: Colors.black,
+                    color: Colors.transparent,
                     icon: Icon(
                       Icons.arrow_drop_down,
                       color: Colors.white,
@@ -72,14 +68,42 @@ class MyHomePage extends StatelessWidget {
                     itemBuilder: (context) => [
                           PopupMenuItem(
                             child: Text(
-                              "First",
+                              "",
                               style: TextStyle(color: Colors.white),
                             ),
                             value: 1,
                           ),
                           PopupMenuItem(
                             child: Text(
-                              "Second",
+                              "Map",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: 2,
+                          ),
+                          PopupMenuItem(
+                            child: Text(
+                              "Movies",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: 2,
+                          ),
+                          PopupMenuItem(
+                            child: Text(
+                              "Books",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: 2,
+                          ),
+                          PopupMenuItem(
+                            child: Text(
+                              "Foods",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            value: 2,
+                          ),
+                          PopupMenuItem(
+                            child: Text(
+                              "Wallpapers",
                               style: TextStyle(color: Colors.white),
                             ),
                             value: 2,
@@ -101,14 +125,7 @@ class MyHomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         InkWell(
-                          onTap: () {
-                            final route = MaterialPageRoute(
-                                builder: (BuildContext context) {
-                              return Continets(
-                                classModel: continents[index],
-                              );
-                            });
-                          },
+                          onTap: () {},
                           child: Image.asset(images[index]),
                         ),
                       ],
