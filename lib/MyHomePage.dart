@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
+import 'botton_nav_controller.dart';
+import 'carousel_slider.dart';
 import 'data_model.dart';
 
 class MyHomePage extends StatelessWidget {
   List<PageModel> homeScreen = [
-    PageModel(wallpapers: [], map: [], books: [], foods: [], movies: [])
+    PageModel(books: [
+      Books(bookList: [
+        'Himu',
+        'Misir Ali',
+        'The Great Gatsby',
+        'Beloved',
+      ])
+    ], electronics: [
+      Electronics(electronicsList: [
+        'Phones',
+        'Laptops',
+        'Headphones',
+        'Monitors',
+      ])
+    ], fashion: [], sports: [], kids: [])
   ];
   List<String> images = [
     "assets/images/1.jpeg",
@@ -14,24 +29,31 @@ class MyHomePage extends StatelessWidget {
     "assets/images/4.jpeg",
     "assets/images/5.jpeg"
   ];
+  List<String> categories = [
+    'Books',
+    'Electronics',
+    'Fashtion',
+    'Sports',
+    'Kids',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
+          Icons.menu,
+          color: Colors.black,
         ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.person,
-              color: Colors.white,
+              color: Colors.black,
             ),
           )
         ],
@@ -42,28 +64,22 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Text(
-                    "MapTeacher",
+                    "Explore With Us And Enjoy the New revolutions",
                     style: TextStyle(
-                        fontFamily: 'avenir',
-                        fontSize: 25,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.settings,
-                    color: Colors.white,
+                      fontFamily: 'avenir',
+                      fontSize: 25,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
                 PopupMenuButton(
                     color: Colors.transparent,
                     icon: Icon(
                       Icons.arrow_drop_down,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     itemBuilder: (context) => [
                           PopupMenuItem(
@@ -112,30 +128,52 @@ class MyHomePage extends StatelessWidget {
               ],
             ),
           ),
+          Container(
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              child: SwipeSlider()),
+          SizedBox(height: 10),
           Expanded(
             child: StaggeredGridView.countBuilder(
-              crossAxisCount: 2,
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              physics: ScrollPhysics(),
+              crossAxisCount: 4,
               itemCount: images.length,
-              mainAxisSpacing: 4.0,
-              crossAxisSpacing: 4.0,
-              itemBuilder: (context, index) {
-                return Container(
-                  child: Card(
-                    color: Colors.green,
+              itemBuilder: (BuildContext context, int index) => Stack(
+                children: [
+                  ClipRRect(
+                    child: Image.asset(images[index]),
+                    borderRadius: BorderRadius.circular(03),
+                  ),
+                  Positioned(
+                    bottom: 5,
+                    left: 10,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        InkWell(
-                          onTap: () {},
-                          child: Image.asset(images[index]),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            categories[index],
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                );
-              },
-              staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+                  )
+                ],
+              ),
+              staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
             ),
           ),
+          BottomNav()
         ],
       ),
     );

@@ -1,45 +1,45 @@
 class PageModel {
-  final List<Wallpapers> wallpapers;
-  final List<Map> map;
   final List<Books> books;
-  final List<Foods> foods;
-  final List<Movies> movies;
+  final List<Electronics> electronics;
+  final List<Books> fashion;
+  final List<Sports> sports;
+  final List<Kids> kids;
 
   PageModel({
-    required this.wallpapers,
-    required this.map,
     required this.books,
-    required this.foods,
-    required this.movies,
+    required this.electronics,
+    required this.fashion,
+    required this.sports,
+    required this.kids,
   });
 }
 
-class Wallpapers {
-  final List<String> wallpapersList;
-
-  Wallpapers({required this.wallpapersList});
-}
-
-class Map {
-  final List<String> mapList;
-
-  Map({required this.mapList});
-}
-
 class Books {
-  final List<String> booksList;
+  final List<String> bookList;
 
-  Books({required this.booksList});
+  Books({required this.bookList});
 }
 
-class Foods {
-  final List<String> foodsList;
+class Electronics {
+  final List<String> electronicsList;
 
-  Foods({required this.foodsList});
+  Electronics({required this.electronicsList});
 }
 
-class Movies {
-  final List<String> moviesList;
+class Fashion {
+  final List<String> fashionList;
 
-  Movies({required this.moviesList});
+  Fashion({required this.fashionList});
+}
+
+class Sports {
+  final List<String> sportsList;
+
+  Sports({required this.sportsList});
+}
+
+class Kids {
+  final List<String> kidsList;
+
+  Kids({required this.kidsList});
 }
