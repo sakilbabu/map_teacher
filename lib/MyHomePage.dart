@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:map_teacher/pop_up.dart';
 import 'botton_nav_controller.dart';
 import 'carousel_slider.dart';
 import 'data_model.dart';
+import 'details.dart';
 
 class MyHomePage extends StatelessWidget {
   List<PageModel> homeScreen = [
@@ -23,7 +25,7 @@ class MyHomePage extends StatelessWidget {
     ], fashion: [], sports: [], kids: [])
   ];
   List<String> images = [
-    "assets/images/1.jpeg",
+    "assets/images/himu.jpg",
     "assets/images/2.jpeg",
     "assets/images/3.jpeg",
     "assets/images/4.jpeg",
@@ -32,7 +34,7 @@ class MyHomePage extends StatelessWidget {
   List<String> categories = [
     'Books',
     'Electronics',
-    'Fashtion',
+    'Fashion',
     'Sports',
     'Kids',
   ];
@@ -75,56 +77,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                PopupMenuButton(
-                    color: Colors.transparent,
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: Colors.black,
-                    ),
-                    itemBuilder: (context) => [
-                          PopupMenuItem(
-                            child: Text(
-                              "",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 1,
-                          ),
-                          PopupMenuItem(
-                            child: Text(
-                              "Map",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 2,
-                          ),
-                          PopupMenuItem(
-                            child: Text(
-                              "Movies",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 2,
-                          ),
-                          PopupMenuItem(
-                            child: Text(
-                              "Books",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 2,
-                          ),
-                          PopupMenuItem(
-                            child: Text(
-                              "Foods",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 2,
-                          ),
-                          PopupMenuItem(
-                            child: Text(
-                              "Wallpapers",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            value: 2,
-                          )
-                        ])
+                PopUpButton()
               ],
             ),
           ),
@@ -142,10 +95,19 @@ class MyHomePage extends StatelessWidget {
               itemCount: images.length,
               itemBuilder: (BuildContext context, int index) => Stack(
                 children: [
-                  ClipRRect(
-                    child: Image.asset(images[index]),
-                    borderRadius: BorderRadius.circular(03),
-                  ),
+                  GestureDetector(
+                      child: ClipRRect(
+                        child: Image.asset(images[index]),
+                        borderRadius: BorderRadius.circular(03),
+                      ),
+                      onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Details(
+                                      categories[index],
+                                      details: [categories[index]],
+                                    )),
+                          )),
                   Positioned(
                     bottom: 5,
                     left: 10,

@@ -8,10 +8,10 @@ class SwipeSlider extends StatefulWidget {
 
 class _SwipeSliderState extends State<SwipeSlider> {
   List<String> imagesList = [
-    'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
-    'https://cdn.pixabay.com/photo/2016/11/18/19/00/breads-1836411_1280.jpg',
-    'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
-    'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
+    'assets/images/1.jpeg',
+    'assets/images/2.jpeg',
+    'assets/images/3.jpeg',
+    'assets/images/4.jpeg',
   ];
   final List<String> titles = [
     ' Coffee ',
@@ -55,7 +55,7 @@ class _SwipeSliderState extends State<SwipeSlider> {
                   ),
                   child: Stack(
                     children: [
-                      Image.network(
+                      Image.asset(
                         item,
                         fit: BoxFit.cover,
                         width: double.infinity,
