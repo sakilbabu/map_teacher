@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:map_teacher/books/book_details.dart';
 import 'package:map_teacher/books/book_list.dart';
 
 class PopUpButton extends StatelessWidget {
@@ -37,7 +38,12 @@ class PopUpButton extends StatelessWidget {
               ),
               PopupMenuItem(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Details()),
+                    );
+                  },
                   child: Text(
                     "Electronics",
                     style: TextStyle(color: Colors.white),
