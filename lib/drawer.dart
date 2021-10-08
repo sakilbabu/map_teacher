@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:map_teacher/const/app_icons.dart';
 import 'package:map_teacher/settings_page.dart';
@@ -10,33 +11,48 @@ class ShowDrawer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 32, 32, 16),
       child: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepOrangeAccent,
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
                 'Personalize',
-                style: TextStyle(),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
               ),
             ),
-            Divider(
+            const Divider(
               height: 1,
               thickness: 1,
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
+              leading: const Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Settings',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
+              leading: const Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Profile',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {
                 Navigator.push(
                   context,
@@ -44,39 +60,73 @@ class ShowDrawer extends StatelessWidget {
                 );
               },
             ),
-            Divider(
-              height: 1,
-              thickness: 1,
-            ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(16.0),
               child: Text(
                 'Contact us',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
               ),
             ),
+            const Divider(
+              height: 1,
+              thickness: 1,
+            ),
             ListTile(
-              leading: Icon(MyFlutterApp.youtube),
-              title: Text('Youtube'),
+              leading: const Icon(
+                MyFlutterApp.youtube,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Youtube',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(MyFlutterApp.facebook_squared),
-              title: Text('Facebook'),
+              leading: const Icon(
+                MyFlutterApp.facebook_squared,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Facebook',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(MyFlutterApp.instagram),
-              title: Text('instagram'),
+              leading: const Icon(
+                MyFlutterApp.instagram,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'instagram',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(MyFlutterApp.twitter),
-              title: Text('Twitter'),
+              leading: const Icon(
+                MyFlutterApp.twitter,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Twitter',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
             ListTile(
-              leading: Icon(MyFlutterApp.gmail),
-              title: Text('Gmail'),
+              leading: const Icon(
+                MyFlutterApp.gmail,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Gmail',
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {},
             ),
           ],

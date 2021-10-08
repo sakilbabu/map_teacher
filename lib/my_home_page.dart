@@ -16,14 +16,17 @@ class MyHomePage extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
+          backgroundColor: Colors.white12,
           drawer: ShowDrawer(),
           body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
                 const SliverAppBar(
+                  backgroundColor: Colors.deepOrangeAccent,
                   title: Text('Categories'),
                   pinned: true,
+                  elevation: 20,
                   floating: true,
                   bottom: TabBar(
                     isScrollable: true,
@@ -38,7 +41,7 @@ class MyHomePage extends StatelessWidget {
                 ),
               ];
             },
-            body: const TabBarView(
+            body: TabBarView(
               children: <Widget>[
                 BooksTab(),
                 FashionTab(),

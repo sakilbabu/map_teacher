@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gender_picker/source/enums.dart';
 import 'package:gender_picker/source/gender_picker.dart';
+import 'package:map_teacher/const/app_icons.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Address',
-                  suffixIcon: const Icon(Icons.home),
+                  suffixIcon: const Icon(MyFlutterApp.address_book),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),

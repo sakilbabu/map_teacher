@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:map_teacher/signup_page.dart';
 
@@ -7,6 +8,7 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrangeAccent,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -21,7 +23,14 @@ class LogInScreen extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                    color: Colors.white),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Divider(
+                height: 1,
+                thickness: 1,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
