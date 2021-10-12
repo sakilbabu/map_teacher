@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:map_teacher/books/read.dart';
-import 'package:map_teacher/home_tabs/data_model.dart';
+import 'package:map_teacher/home_tabs/book_tab/books_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailsPreview extends StatelessWidget {

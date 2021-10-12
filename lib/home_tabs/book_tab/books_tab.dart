@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:map_teacher/books/details_previw.dart';
-import 'data_model.dart';
+import 'books_data.dart';
 
 class BooksTab extends StatefulWidget {
   const BooksTab({Key? key}) : super(key: key);

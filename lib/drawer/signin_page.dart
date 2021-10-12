@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:map_teacher/signup_page.dart';
+import 'package:map_teacher/drawer/signup_page.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class LogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrangeAccent,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -23,7 +23,7 @@ class LogInScreen extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    color: Colors.deepOrangeAccent),
               ),
               const SizedBox(
                 height: 20.0,
@@ -32,42 +32,38 @@ class LogInScreen extends StatelessWidget {
                 height: 1,
                 thickness: 1,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Login',
-                      style: TextStyle(
-                          fontSize: 25.0, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(
                 height: 30.0,
               ),
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Email',
-                  suffixIcon: const Icon(Icons.email),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepOrangeAccent),
                   ),
+                  suffixIcon: const Icon(
+                    Icons.email,
+                    color: Colors.deepOrangeAccent,
+                  ),
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
               TextField(
+                cursorColor: Colors.deepOrangeAccent,
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: 'Password',
-                  suffixIcon: const Icon(Icons.visibility_off),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepOrangeAccent),
                   ),
+                  hintText: 'Password',
+                  suffixIcon: const Icon(
+                    Icons.visibility_off,
+                    color: Colors.deepOrangeAccent,
+                  ),
+                  border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(
@@ -86,8 +82,8 @@ class LogInScreen extends StatelessWidget {
                       child: const Text('Login'),
                       onPressed: () {},
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.purple)),
+                          backgroundColor: MaterialStateProperty.all(
+                              Colors.deepOrangeAccent)),
                     ),
                   ],
                 ),
@@ -105,7 +101,7 @@ class LogInScreen extends StatelessWidget {
                   TextSpan(text: 'Don\'t have an account?', children: [
                     TextSpan(
                       text: 'Signup',
-                      style: TextStyle(color: Colors.purple),
+                      style: TextStyle(color: Colors.deepOrangeAccent),
                     ),
                   ]),
                 ),

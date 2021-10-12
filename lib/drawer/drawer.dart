@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:map_teacher/const/app_icons.dart';
-import 'package:map_teacher/settings_page.dart';
+import 'package:map_teacher/drawer/payment_gateway_page.dart';
+import 'package:map_teacher/drawer/signin_page.dart';
 
 class ShowDrawer extends StatelessWidget {
   const ShowDrawer({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class ShowDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             const SizedBox(
-              height: 40,
+              height: 25,
             ),
             const Padding(
               padding: EdgeInsets.all(16.0),
@@ -57,6 +58,54 @@ class ShowDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const LogInScreen()),
+                );
+              },
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Accounts',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25),
+              ),
+            ),
+            const Divider(
+              height: 1,
+              thickness: 1,
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.payment,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Premium watch',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PaymentWatchTab()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.details,
+                color: Colors.white,
+              ),
+              title: const Text(
+                'Details',
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PaymentWatchTab()),
                 );
               },
             ),
